@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "mobx": "^6.5.0",
+    "mobx-react": "^7.3.0",
+    "mobx-state-tree": "^5.1.3",
     "next": "12.1.4",
     "react": "18.0.0",
     "react-dom": "18.0.0"
