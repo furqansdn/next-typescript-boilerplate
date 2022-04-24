@@ -1,6 +1,6 @@
-import { connectReduxDevtools } from "mst-middlewares"
-import { RootStoreModel, RootStore } from "./root-store";
-import { Environment } from "../environment";
+import { connectReduxDevtools } from 'mst-middlewares';
+import { RootStoreModel, RootStore } from './root-store';
+import { Environment } from '../environment';
 
 /**
  * The key we'll be saving our state as within async storage.
@@ -46,8 +46,10 @@ export async function setupRootStore() {
 
   // Redux devtools
   if (process.env.NODE_ENV !== 'production') {
-    connectReduxDevtools(require("remotedev"), rootStore)
+    connectReduxDevtools(require('remotedev'), rootStore);
   }
+  // For SSG and SSR always create a new store
+  if (typeof window === 'undefined') return rootStore;
 
   // track changes & save to storage
   // onSnapshot(rootStore, (snapshot) => storage.save(ROOT_STATE_STORAGE_KEY, snapshot))

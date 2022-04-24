@@ -30,10 +30,8 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
-        <Head>
-          <meta property='custom' content='Da' />
-        </Head>
+      <Html lang='en'>
+        <Head />
         <body className='font-sans antialiased'>
           <Main />
           <NextScript />

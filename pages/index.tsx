@@ -1,9 +1,9 @@
-import Layout from '../components/Layout';
+import { ReactNode } from 'react';
+import Button from '../components/Button';
+import App from '../layouts/App';
 
 export default function Home() {
-  return (
-    <Layout title={process.env.appName}>
-      <div className='flex items-center justify-center min-h-screen bg-gray-100'></div>
-    </Layout>
-  );
+  return <div className='space-x-2'>TailwindCSS</div>;
 }
+
+Home.getLayout = (Page: ReactNode) => <App>{Page}</App>;
